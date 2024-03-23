@@ -32,6 +32,8 @@ function PlanYourDiet() {
             {/* Text Wrapper */}
             <div className="text" style={textStyle}>
                 <h1>Plan your nutritious diet!</h1>
+                <p>Select from our assortment of dietician-approved recipes and meal-plans to meet your health goals!</p>
+                <button>Start Planning!</button>
             </div>
         </div>
     );
