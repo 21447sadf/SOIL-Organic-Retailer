@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // Array holds images for the slideshow to display
 const items = ["Corn.jpg", "MuesliBar.jpg", "Pasta.jpg", "Spinach.jpg", "Yoghurt.jpg"];
@@ -58,6 +59,7 @@ function Slideshow () {
 
     // Slides
     const slideStyle = {
+        position: "relative",
         display: "inline-block",
         height: "1000px",
         width: "100%",
@@ -66,6 +68,7 @@ function Slideshow () {
 
     // Images 
     const imageStyle = {
+        position: "relative",
         width: "100%",
         height: "1000px",
         fit: "cover"
@@ -77,7 +80,7 @@ function Slideshow () {
     };
 
     //Inactive slide dots
-    const inactiveDot = {
+    const inactiveDotStyle = {
         display: "inline-block",
         height: "20px",
         width: "20px",
@@ -88,7 +91,7 @@ function Slideshow () {
     };
 
     //Active slide dots
-    const activeDot = {
+    const activeDotStyle = {
         display: "inline-block",
         height: "20px",
         width: "20px",
@@ -98,6 +101,13 @@ function Slideshow () {
         backgroundColor: "#797777"
     };
 
+    //Slideshow Caption + Shop Now Button
+    const shopNowStyle = {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)"
+    };
 
 
     return (
@@ -107,6 +117,13 @@ function Slideshow () {
             {items.map((imageUrl, index) => (
                 <div className="slide" key={index} style={slideStyle}>
                     <img src={imageUrl} alt="Slide" style={imageStyle}/>
+                    {/* Slide Show Caption + Shop Now Button */}
+                    <div className="shopNow" style={shopNowStyle}>
+                        <h3>Weekly Specials</h3>
+                        <Link to="/Sales">
+                            <button>Shop Now</button>
+                        </Link> 
+                    </div>
                 </div>
             ))}
         </div>
@@ -129,7 +146,7 @@ function Slideshow () {
             <div 
             key={idx} 
             className="slideshowDot" 
-            style = {index === idx ? activeDot : inactiveDot}
+            style = {index === idx ? activeDotStyle : inactiveDotStyle}
             onClick={() => {
                 setIndex(idx);
             }}
