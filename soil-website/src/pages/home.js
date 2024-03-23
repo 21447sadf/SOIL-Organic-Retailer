@@ -1,12 +1,13 @@
 import React from "react";
 import Slideshow from "../components/Slideshow";
-import Sales from "../components/Sales";
+import PlanYourDiet from "../components/PlanYourDiet";
 
 function Home() {
     return (
         <div className="Home">
             <p>Home page</p>
             <Slideshow />
+            <PlanYourDiet />
         </div>
     );
 }
