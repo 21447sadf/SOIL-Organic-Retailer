@@ -22,7 +22,7 @@ function PlanYourDiet() {
         position: "relative",
         width: "100%",
         height: "1000px",
-        fit: "cover",
+        fit: "cover"
     };
 
     return (
