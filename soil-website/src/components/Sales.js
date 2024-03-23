@@ -2,7 +2,9 @@ import React from "react";
 
 function Sales() {
     return (
-        <p>Sales Slideshow Goes Here</p>
+        <div class="Sales">
+            <p>Sales Slideshow Goes Here</p>
+        </div>
     );
 }
 
