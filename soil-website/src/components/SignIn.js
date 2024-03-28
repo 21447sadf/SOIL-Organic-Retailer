@@ -1,8 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SignIn() {
     return (
-        <button type="button">Sign In</button>
+        <div className="signInBtn">
+            <Link to="/SignInPage">
+                <button>Sign In</button>
+            </Link>  
+        </div>
     ); 
 }
 
