@@ -49,3 +49,5 @@ function SignIn() {
 }
 
 export default SignIn;
+// to do: fix state should only show email and pass when sign in not email and name, and fix the space between the 
+// 
