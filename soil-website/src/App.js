@@ -7,17 +7,14 @@ import Sales from "./pages/Sales";
 import DIYToolkit from "./pages/DIYToolkit";
 import PlanYourDiet from "./components/PlanYourDiet";
 import Footer from "./components/Footer";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Navbar />  
-      <SignIn />
-      <SignUp />
-
+      <Navbar />
       {/* /* Set up router paths */}
       <Router>
         <Routes>
@@ -25,10 +22,13 @@ function App() {
           <Route path="/Sales" element={<Sales />} />
           <Route path="/PlanYourDiet" element={<PlanYourDiet/>} />
           <Route path="/DIYToolkit" element={<DIYToolkit />} />
+          <Route path ="/SignIn" element={<SignIn />} />
         </Routes>
+
       </Router>
 
-    
+      <SignIn />
+      <SignUp />
       <Footer /> 
     </div>
   );
