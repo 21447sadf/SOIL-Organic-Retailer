@@ -26,11 +26,10 @@ function App() {
           <Route path="/PlanYourDiet" element={<PlanYourDiet/>} />
           <Route path="/DIYToolkit" element={<DIYToolkit />} />
           <Route path="/SignInPage" element={<SignInPage />} />
+          <Route path ="/SignIn" element={<SignIn />} />
         </Routes>
 
       </BrowserRouter>
-
-
 
       <Footer /> 
     </div>
