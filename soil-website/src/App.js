@@ -29,7 +29,7 @@ function App() {
           <Route path ="/SignIn" element={<SignIn />} />
         </Routes>
 
-      </Router>
+      </BrowserRouter>
 
       <Footer /> 
     </div>
