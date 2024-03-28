@@ -7,7 +7,7 @@ function Navbar() {
   return (
 
 
-    <div className = "navbars">
+    <div className = "navbarWrapper">
     <nav className = "navbar">
       <ul className="no_style_list">
         <li>
