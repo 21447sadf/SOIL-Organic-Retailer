@@ -19,7 +19,7 @@ function Navbar() {
 
       </div>
       <Link to="/SignIn">
-        <button id="SignIn-Btn">Sign Up</button>
+        <button id="SignUp-Btn">Sign Up</button>
         <button id="SignIn-Btn">Sign In</button>
       </Link>
     </nav>

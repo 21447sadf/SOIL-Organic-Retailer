@@ -7,10 +7,48 @@
 
 }
 
+/*Sign In/Up Button*/
+#SignUp-Btn {
+    font-family: "TT-Commons-Pro-Expanded";
+    height: 50px;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #EAEFEA;
+    position: absolute;
+    top: 10px;
+    left: 1450px;
+}
+
+#SignIn-Btn {
+    font-family: "TT-Commons-Pro-Expanded";
+    height: 50px;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #EAEFEA;
+    position: absolute;
+    top: 10px;
+    left: 1300px;
+}
+
+#SignUp-Btn:hover {
+    background-color: #CDD1CD;
+}
+
+#SignIn-Btn:hover {
+    background-color: #CDD1CD;
+}
+
 /* Add fonts */
 @font-face {
     font-family: "Advent-Pro-Light";
     src: url("../../public/advent-pro.light.ttf");
+}
+
+@font-face {
+    font-family: "TT-Commons-Pro-Expanded";
+    src: url("../../public/Fontspring-DEMO-tt_commons_pro_expanded_regular.otf");
 }
 
 .nav_ul_li{
