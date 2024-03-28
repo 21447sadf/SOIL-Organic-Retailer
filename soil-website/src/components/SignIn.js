@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import React, { useState } from 'react'; // Import useState from react
+import { useState } from 'react'; // Import useState from react
 import './SignIn.css'
 import user_icon from './person.png';
 import email_icon from './email.png';
