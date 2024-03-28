@@ -1,0 +1,12 @@
+.navbar {
+    background-color: bisque;
+}
+
+.no_style_list{
+    list-style-type: none;
+
+}
+
+.nav_ul_li{
+    display: inline-block;
+}

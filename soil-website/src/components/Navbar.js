@@ -1,14 +1,40 @@
 import React from "react";
-
+//import "./SignIn";
+import "./Navbar.css";
+import {Link} from "react-router-dom";
 function Navbar() {
-    return (
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="../Sales">Specials</a></li>
-            <li><a href="/PlanYourDiet">Plan your diet</a></li>
-            <li><a href="/DIYToolkit">DIY Gardening</a></li>
-        </ul>
-    )
-};
+  return (
+
+
+    <div className = "navbars">
+    <nav className = "navbar">
+      <ul className="no_style_list">
+        <li>
+          <a href="/">Home</a>
+          <a href="/PlanYourDiet ">Plan your diet</a>
+          <a href="/DIYToolkit ">DIY Gardening</a>
+        </li>
+      </ul>
+    </nav>
+    {/* <div className="button">
+      <Link to = "./SignIn">
+      <button>
+      Sign Up
+      </button>
+      </Link>
+      <Link to = "./SignIn">
+      <button>
+      Sign In
+      </button>
+      </Link>
+       */}
+    </div>
+    
+
+ 
+
+    
+  );
+}
 
 export default Navbar;
