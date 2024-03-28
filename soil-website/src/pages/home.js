@@ -9,7 +9,6 @@ import DiscussionForum from "../components/DiscussionForum";
 function Home() {
     return (
         <div className="Home">
-            <p>Home page</p>
             <Slideshow />
             <PlanYourDiet />
             {/* <DiscussionForum /> */}

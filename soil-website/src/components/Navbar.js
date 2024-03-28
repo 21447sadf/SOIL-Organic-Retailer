@@ -9,13 +9,15 @@ function Navbar() {
 
     <div className = "navbarWrapper">
     <nav className = "navbar">
-      <ul className="no_style_list">
-        <li>
-          <a href="/">Home</a>
-          <a href="/PlanYourDiet ">Plan your diet</a>
-          <a href="/DIYToolkit ">DIY Gardening</a>
-        </li>
-      </ul>
+      <div className = "listWrapper">
+        <ul className="no_style_list">
+          <li>
+            <a href="/">Home</a>
+            <a href="/PlanYourDiet ">Plan your diet</a>
+            <a href="/DIYToolkit ">DIY Gardening</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     {/* <div className="button">
       <Link to = "./SignIn">
