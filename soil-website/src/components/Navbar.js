@@ -1,14 +1,20 @@
 import React from "react";
 
+import "./Navbar.css";
 function Navbar() {
-    return (
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="../Sales">Specials</a></li>
-            <li><a href="/PlanYourDiet">Plan your diet</a></li>
-            <li><a href="/DIYToolkit">DIY Gardening</a></li>
-        </ul>
-    )
-};
+  return (
+ 
+    <nav className = "navbar">
+      <ul className="no_style_list">
+        <li>
+          <a href="/">Home</a>
+          <a href="/PlanYourDiet ">Plan your diet</a>
+          <a href="/DIYToolkit ">DIY Gardening</a>
+        </li>
+      </ul>
+    </nav>
+    
+  );
+}
 
 export default Navbar;

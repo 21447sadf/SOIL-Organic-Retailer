@@ -7,14 +7,17 @@ import Sales from "./pages/Sales";
 import DIYToolkit from "./pages/DIYToolkit";
 import PlanYourDiet from "./components/PlanYourDiet";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
+import Home from "./pages/home";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Navbar />
+      <Navbar />  
+      <SignIn />
+      <SignUp />
+
       {/* /* Set up router paths */}
       <Router>
         <Routes>
@@ -25,8 +28,7 @@ function App() {
         </Routes>
       </Router>
 
-      <SignIn />
-      <SignUp />
+    
       <Footer /> 
     </div>
   );
