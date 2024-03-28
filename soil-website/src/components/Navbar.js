@@ -12,6 +12,7 @@ function Navbar() {
         <ul className="no_style_list">
           <li>
             <a href="/">Home</a>
+            <a href="/Sales">Specials</a>
             <a href="/PlanYourDiet ">Plan your diet</a>
             <a href="/DIYToolkit ">DIY Gardening</a>
           </li>
