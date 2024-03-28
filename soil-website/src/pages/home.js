@@ -14,8 +14,8 @@ function Home() {
             {/* <DiscussionForum /> */}
             <DIYVeggies />
 
-            <SignIn />
-            <SignUp />
+            {/* <SignIn /> */}
+            {/* <SignUp /> */}
         </div>
     );
 }
