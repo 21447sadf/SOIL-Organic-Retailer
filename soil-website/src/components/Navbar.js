@@ -23,6 +23,13 @@ function Navbar() {
         <button id="SignUp-Btn">Sign Up</button>
         <button id="SignIn-Btn">Sign In</button>
       </Link>
+      <Link to="/ShoppingCart">
+        <img 
+        src="../shopping_cart_black_24dp.svg" 
+        alt="shopping-cart-btn"
+        id="shopping-cart-btn">
+        </img>
+      </Link>
     </nav>
     {/* <div className="button">
       <Link to = "./SignIn">

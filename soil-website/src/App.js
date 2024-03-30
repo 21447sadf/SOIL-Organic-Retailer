@@ -2,8 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
 import Sales from "./pages/Sales";
+import ShoppingCart from './pages/ShoppingCart';
 import SignInPage from "./pages/SignInPage";
 import DIYToolkit from "./pages/DIYToolkit";
 import PlanYourDiet from "./components/PlanYourDiet";
@@ -27,6 +27,7 @@ function App() {
           <Route path="/DIYToolkit" element={<DIYToolkit />} />
           <Route path="/SignInPage" element={<SignInPage />} />
           <Route path ="/SignIn" element={<SignIn />} />
+          <Route path ="/ShoppingCart" element={<ShoppingCart />} />
         </Routes>
       </BrowserRouter>
 
