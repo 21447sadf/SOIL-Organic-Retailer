@@ -1,11 +1,13 @@
 import React from "react";
 import "./Sales.css"
+import initSaleItems from "../data/saleItems";
 
 //This component includes a list of sale items
 
 //TO DO: Redirect to Shopping Cart, with item added in
 
 function Sales() {
+    initSaleItems();
     return (
         <div class="Sales-Container">
             <div class="Sales">
