@@ -1,18 +1,18 @@
 import React from "react";
 import { useState } from "react";
+import ChangeQtyBtn from "../components/changeQtyBtn";
 
 function ShoppingCart() {
     //Access cartItems from localStorage and display
     const cartItems = JSON.parse(localStorage.getItem('items'));
     let total = 0;
 
-    //State to update quantity field
-    // [qty, setQty] = useState(0);
+    //Function to update price on each product
+    // const [price, setPrice] = useState(0);
 
-    // const increaseQty = (qty) => {
-    //     setQty(qty + 1);
+    // function updatePrice(qty, price) {
+    //     setPrice((prevPrice) => (qty * price));
     // };
-
 
     return (
         <div className="cartWrapper">
@@ -32,11 +32,22 @@ function ShoppingCart() {
                             <td>{item.prodName}</td>
                             <td>{item.price}</td>
                             <td>
-                                <button>-</button>
+                                <ChangeQtyBtn minValue={1} maxValue={10} />
+                            {/* <div className="btn-group">
+                                <button className="increment-btn" onClick={handleDecrementCounter}>
+                                    <span class="material-symbols-outlined">-</span>
+                                </button>
+                                <p>{item.qty}</p>
+                                <button className="decrement-btn" onClick={handleIncrementCounter}>
+                                    <span class="material-symbols-outlined">+</span>
+                                </button>
+                                </div> */}
+                                {/* <button>-</button>
                                 <input type="number" id="number" value={item.qty} />
-                                <button onclick={increaseQty(item.qty)}>+</button>
+                                <button onclick= {increaseQty(item.qty)}>+</button> */}
                             </td>
                             <td>{item.price * item.qty}</td>
+                            <td><button>X</button></td>
                         </tr>
                     ))
                 ) :  (
