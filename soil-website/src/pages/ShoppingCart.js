@@ -1,16 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ChangeQtyBtn from "../components/changeQtyBtn";
+import Price from "../components/Price"
+import TotalPrice from "../components/TotalPrice";
 
 const ITEMS_KEY = "items";
 
 function ShoppingCart() {
+
     //Access cartItems from localStorage and display
     const cartItems = JSON.parse(localStorage.getItem('items'));
     let total = 0;
     
-    //Hook to add items to cart
-        //Hook to add items to cart
+        //Hook to  remove items from cart
         const [items, setCartItems] = useState(JSON.parse(localStorage.getItem(ITEMS_KEY)));
 
         //Function to add item to cart
@@ -20,11 +22,26 @@ function ShoppingCart() {
                 items = items.filter(obj => obj.prodName !== item.prodName);
                 //Store item in local storage
                 localStorage.setItem(ITEMS_KEY, JSON.stringify(items));
+
+                //Update price for remaining items in storage
+                setFlagForPriceUpdate(prevState => !prevState);
                 return items;
             });
-          
-            
         };
+
+        const [flagForPriceUpdate, setFlagForPriceUpdate]  = useState(false);
+
+        function handleQtyChange() {
+            setFlagForPriceUpdate(prevState => !prevState);
+        };
+
+        // //Function to calculate total price
+        // function calcTotalPrice() {
+        //     for (let i = 0; i < cartItems.length; i++) {
+        //         total += cartItems[i].price;
+        //     }
+        //     return total;
+        // }
 
     return (
         <div className="cartWrapper">
@@ -40,13 +57,15 @@ function ShoppingCart() {
                     </tr>
                     {/*Display all cart items as rows here*/}
                     {( cartItems && cartItems.length > 0) ? (cartItems.map((item, index) => (
-                        <tr>
+                        <tr id = {`Item-${item.prodName}`}>
                             <td>{item.prodName}</td>
-                            <td>{item.price}</td>
+                            <td>${item.price}</td>
                             <td>
-                                <ChangeQtyBtn minValue={1} maxValue={10} />
+                                <ChangeQtyBtn cartItem = {item} quantity={item.qty} onQtyChange={handleQtyChange} />
                             </td>
-                            <td>{item.price * item.qty}</td>
+                            <td>
+                                <Price cartItem={item.prodName} itemPrice={item.price} flagUpdate={flagForPriceUpdate} />
+                            </td>
                             <td><button onClick={() => removeItemFromCart(item)}>X</button></td>
                         </tr>
                     ))
@@ -59,8 +78,8 @@ function ShoppingCart() {
             <div className="Order-Summary">
                 <table>
                     <th>Order Summary</th>
-                    <tr>Subtotal<td>${total}</td></tr>
-                    <tr>TOTAL<td>${total}</td></tr>
+                    <tr>Subtotal<td><TotalPrice flagUpdate={flagForPriceUpdate}/></td></tr>
+                    <tr>TOTAL<td><TotalPrice flagUpdate={flagForPriceUpdate}/></td></tr>
                 </table>
             </div>
             <div className="checkout-Btn">
