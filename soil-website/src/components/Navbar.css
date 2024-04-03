@@ -1,5 +1,5 @@
 .navbar {
-    background-color: bisque;
+    background: none;
 }
 
 .no_style_list{
@@ -7,6 +7,106 @@
 
 }
 
+/*Sign In/Up Button*/
+#SignUp-Btn {
+    font-family: "TT-Commons-Pro-Expanded";
+    height: 50px;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #EAEFEA;
+    position: absolute;
+    top: 10px;
+    left: 1450px;
+}
+
+#SignIn-Btn {
+    font-family: "TT-Commons-Pro-Expanded";
+    height: 50px;
+    width: 120px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #EAEFEA;
+    position: absolute;
+    top: 10px;
+    left: 1300px;
+}
+
+#SignUp-Btn:hover {
+    background-color: #CDD1CD;
+}
+
+#SignIn-Btn:hover {
+    background-color: #CDD1CD;
+}
+
+/* Add fonts */
+@font-face {
+    font-family: "Advent-Pro-Light";
+    src: url("../../public/advent-pro.light.ttf");
+}
+
+@font-face {
+    font-family: "TT-Commons-Pro-Expanded";
+    src: url("../../public/Fontspring-DEMO-tt_commons_pro_expanded_regular.otf");
+}
+
 .nav_ul_li{
     display: inline-block;
+}
+
+.navbarWrapper {
+    width: 700px;
+    height: 100px;
+    position: absolute;
+    top: 60px;
+    left: 220px;
+    opacity: 1;
+}
+
+/*Navbar styling*/
+.listWrapper a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    font-family: "Advent-Pro-Light";
+    margin-right: 30px;
+    padding-bottom: 3px;
+    font-size: 30px;
+}
+
+/*Underline animation*/
+.listWrapper a:hover {
+    color: black;
+}
+
+.listWrapper a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .listWrapper a:hover::before {
+    transform: scaleX(1);
+  }
+
+  /*Shopping Cart Button*/
+#shopping-cart-btn {
+    position: absolute;
+    top: 10px;
+    left: 1600px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#shopping-cart-btn:hover {
+    filter: invert(66%) sepia(15%) saturate(457%) hue-rotate(345deg) brightness(91%) contrast(86%);;
 }

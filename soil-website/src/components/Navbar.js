@@ -6,15 +6,30 @@ function Navbar() {
   return (
 
 
-    <div className = "navbars">
+    <div className = "navbarWrapper">
     <nav className = "navbar">
-      <ul className="no_style_list">
-        <li>
-          <a href="/">Home</a>
-          <a href="/PlanYourDiet ">Plan your diet</a>
-          <a href="/DIYToolkit ">DIY Gardening</a>
-        </li>
-      </ul>
+      <div className = "listWrapper">
+        <ul className="no_style_list">
+          <li>
+            <a href="/">Home</a>
+            <a href="/Sales">Specials</a>
+            <a href="/PlanYourDiet ">Plan your diet</a>
+            <a href="/DIYToolkit ">DIY Gardening</a>
+          </li>
+        </ul>
+
+      </div>
+      <Link to="/SignIn">
+        <button id="SignUp-Btn">Sign Up</button>
+        <button id="SignIn-Btn">Sign In</button>
+      </Link>
+      <Link to="/ShoppingCart">
+        <img 
+        src="../shopping_cart_black_24dp.svg" 
+        alt="shopping-cart-btn"
+        id="shopping-cart-btn">
+        </img>
+      </Link>
     </nav>
     {/* <div className="button">
       <Link to = "./SignIn">
