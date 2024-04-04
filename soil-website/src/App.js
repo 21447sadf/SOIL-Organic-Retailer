@@ -10,6 +10,7 @@ import PlanYourDiet from "./components/PlanYourDiet";
 import Footer from "./components/Footer";
 import Home from "./pages/home";
 import Checkout from "./pages/Checkout";
+import PaymentConfirm from './pages/PaymentConfirm';
 import './App.css';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <Route path ="/SignIn" element={<SignIn />} />
           <Route path ="/ShoppingCart" element={<ShoppingCart />} />
           <Route path="/Checkout" element={<Checkout />} />
+          <Route path="/Checkout/PaymentConfirm" element={<PaymentConfirm />} />
         </Routes>
       </BrowserRouter>
 

@@ -11,6 +11,11 @@ function ShoppingCart() {
 
     //Access cartItems from localStorage and display
     const cartItems = JSON.parse(localStorage.getItem('items'));
+    //If localstorage doesn't have 'items' set
+    //Set it to an empty array
+    if (cartItems == null) {
+        localStorage.setItem("items", JSON.stringify([]));
+    }
     let total = 0;
     
         //Hook to  remove items from cart
