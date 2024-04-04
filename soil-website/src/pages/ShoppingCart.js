@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ChangeQtyBtn from "../components/changeQtyBtn";
 import Price from "../components/Price"
 import TotalPrice from "../components/TotalPrice";
@@ -34,14 +35,6 @@ function ShoppingCart() {
         function handleQtyChange() {
             setFlagForPriceUpdate(prevState => !prevState);
         };
-
-        // //Function to calculate total price
-        // function calcTotalPrice() {
-        //     for (let i = 0; i < cartItems.length; i++) {
-        //         total += cartItems[i].price;
-        //     }
-        //     return total;
-        // }
 
     return (
         <div className="cartWrapper">
@@ -82,12 +75,17 @@ function ShoppingCart() {
                     <tr>TOTAL<td><TotalPrice flagUpdate={flagForPriceUpdate}/></td></tr>
                 </table>
             </div>
-            <div className="checkout-Btn">
-                <button>Proceed To Checkout</button>
-            </div>
-            <div className="continue-Shopping-Btn">
-                <button>Continue Shopping</button>
-            </div>
+            <Link to="/Checkout">
+                <div className="checkout-Btn">
+                    <button>Proceed To Checkout</button>
+                </div> 
+            </Link>
+            <Link to="/Sales">
+                <div className="continue-Shopping-Btn">
+                    <button>Continue Shopping</button>
+                </div>
+            </Link>
+
         </div>
     );
 }

@@ -9,6 +9,7 @@ import DIYToolkit from "./pages/DIYToolkit";
 import PlanYourDiet from "./components/PlanYourDiet";
 import Footer from "./components/Footer";
 import Home from "./pages/home";
+import Checkout from "./pages/Checkout";
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/SignInPage" element={<SignInPage />} />
           <Route path ="/SignIn" element={<SignIn />} />
           <Route path ="/ShoppingCart" element={<ShoppingCart />} />
+          <Route path="/Checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
 
