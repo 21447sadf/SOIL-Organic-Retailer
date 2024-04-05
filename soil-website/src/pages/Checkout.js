@@ -21,7 +21,6 @@ function Checkout() {
     return (
         <div className="CheckoutWrapper">
             <div className="checkoutFormWrapper">
-
                 <form onSubmit={handleSubmit} noValidate>            
                     <h1>Checkout</h1>
                     <h2>Shipping Details</h2>
