@@ -6,7 +6,7 @@ import Sales from "./pages/Sales";
 import ShoppingCart from './pages/ShoppingCart';
 import SignInPage from "./pages/SignInPage";
 import DIYToolkit from "./pages/DIYToolkit";
-import PlanYourDiet from "./components/PlanYourDiet";
+import MealPlanning from "./pages/MealPlanning";
 import Footer from "./components/Footer";
 import Home from "./pages/home";
 import Checkout from "./pages/Checkout";
@@ -25,7 +25,7 @@ function App() {
           
           <Route exact path="/" element={<Home />} />
           <Route path="/Sales" element={<Sales />} />
-          <Route path="/PlanYourDiet" element={<PlanYourDiet/>} />
+          <Route path="/MealPlanning" element={<MealPlanning />} />
           <Route path="/DIYToolkit" element={<DIYToolkit />} />
           <Route path="/SignInPage" element={<SignInPage />} />
           <Route path ="/SignIn" element={<SignIn />} />

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../components/PlanYourDiet.css";
 
 function PlanYourDiet() {
@@ -14,7 +15,9 @@ function PlanYourDiet() {
                 <div className="HeaderWrapper">
                     <h1>Plan your nutritious diet!</h1>
                     <p>Select from our assortment of dietician-approved recipes and meal-plans to meet your health goals!</p>
-                    <button className="Plan-Btn">START PLANNING</button>
+                    <Link to="/MealPlanning">
+                        <button className="Plan-Btn">START PLANNING</button>
+                    </Link>
                 </div>
             </div>
         </div>
