@@ -74,7 +74,7 @@ function ShoppingCart() {
                     ))
                 ) :  (
                     <tr>
-                        <td>No items in the cart</td>
+                        <td>Your cart is empty</td>
                     </tr>)}
                 </table>
             </div>
