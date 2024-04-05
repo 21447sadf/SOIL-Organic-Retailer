@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../components/DIYVeggies.css";
 
 function DIYVeggies() {
         //STYLING
@@ -27,13 +28,13 @@ function DIYVeggies() {
 
     return (
         //Image wrapper
-        <div className="DIYVeggies" style={DIYVeggiesStyle}>
+        <div className="DIYVeggies">
             <img src="/GardenToolkit.png" alt="GardenToolkit.png" width="1020px" height="500px"/>
             {/* Text Wrapper */}
-            <div className="text" style={textStyle}>
+            <div className="text">
                 <h1>Grow your own veggies with our beginner friendly toolkit for gardening!</h1>
                 <Link to="/DIYToolkit">
-                    <button>Learn More</button>
+                    <button class="Learn-More-Btn">Learn More</button>
                 </Link>
                 
             </div>
