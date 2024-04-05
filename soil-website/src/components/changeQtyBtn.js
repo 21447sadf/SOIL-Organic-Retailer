@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./changeQtyBtn.css";
 
 const ITEMS_KEY = "items"
 
@@ -36,12 +37,12 @@ const ChangeQtyBtn = ({ cartItem, quantity, onQtyChange }) => {
     }; 
     return (
       <div className="btn-group">
-        <button className="increment-btn" onClick={handleIncrementCounter}>
-          <span class="material-symbols-outlined">add</span>
+        <button className="decrement-btn" onClick={handleDecrementCounter}>
+          <span class="material-symbols-outlined">-</span>
         </button>
         <p>{count}</p>
-        <button className="decrement-btn" onClick={handleDecrementCounter}>
-          <span class="material-symbols-outlined">remove</span>
+        <button className="increment-btn" onClick={handleIncrementCounter}>
+          <span class="material-symbols-outlined">+</span>
         </button>
       </div>
     );
