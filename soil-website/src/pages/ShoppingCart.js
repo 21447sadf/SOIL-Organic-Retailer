@@ -11,11 +11,7 @@ function ShoppingCart() {
 
     //Access cartItems from localStorage and display
     const cartItems = JSON.parse(localStorage.getItem('items'));
-    //If localstorage doesn't have 'items' set
-    //Set it to an empty array
-    if (cartItems == null) {
-        localStorage.setItem("items", JSON.stringify([]));
-    }
+
     let total = 0;
     
         //Hook to  remove items from cart
@@ -80,11 +76,16 @@ function ShoppingCart() {
                     <tr>TOTAL<td><TotalPrice flagUpdate={flagForPriceUpdate}/></td></tr>
                 </table>
             </div>
-            <Link to="/Checkout">
+            { cartItems.length > 0 ? 
+            (<Link to="/Checkout">
                 <div className="checkout-Btn">
                     <button>Proceed To Checkout</button>
                 </div> 
-            </Link>
+            </Link>) : (
+                null
+            )
+            } 
+
             <Link to="/Sales">
                 <div className="continue-Shopping-Btn">
                     <button>Continue Shopping</button>
