@@ -20,8 +20,12 @@ function Navbar() {
 
       </div>
       <Link to="/SignIn">
-        <button id="SignUp-Btn">Sign Up</button>
+        
         <button id="SignIn-Btn">Sign In</button>
+      </Link>
+      <Link to="/SignUp">
+        <button id="SignUp-Btn">Sign Up</button>
+        
       </Link>
       <Link to="/ShoppingCart">
         <img 
