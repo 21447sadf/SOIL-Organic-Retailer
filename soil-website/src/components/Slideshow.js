@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Slideshow.css";
 
 // Array holds images for the slideshow to display
 const items = ["Corn.jpg", "MuesliBar.jpg", "Pasta.jpg", "Spinach.jpg", "Yoghurt.jpg"];
@@ -76,7 +77,11 @@ function Slideshow () {
 
     //Buttons
     const slideshowDots = {
-        textAlign: "center"
+        textAlign: "center",
+        position: "absolute",
+        top: "120%",
+        left: "45%"
+
     };
 
     //Inactive slide dots
@@ -87,7 +92,7 @@ function Slideshow () {
         borderRadius: "50%",
         cursor: "pointer",
         margin: "15px 7px 0px",
-        backgroundColor: "#c4c4c4"
+        backgroundColor: "white"
     };
 
     //Active slide dots
@@ -98,15 +103,15 @@ function Slideshow () {
         borderRadius: "50%",
         cursor: "pointer",
         margin: "15px 7px 0px",
-        backgroundColor: "#797777"
+        backgroundColor: "grey"
     };
 
     //Slideshow Caption + Shop Now Button
     const shopNowStyle = {
         position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)"
+        top: "40%",
+        left: "20%",
+        transform: "translate(-50%, -50%)",
     };
 
 
@@ -121,7 +126,7 @@ function Slideshow () {
                     <div className="shopNow" style={shopNowStyle}>
                         <h3>Weekly Specials</h3>
                         <Link to="/Sales">
-                            <button>Shop Now</button>
+                            <button>SHOP NOW</button>
                         </Link> 
                     </div>
                 </div>

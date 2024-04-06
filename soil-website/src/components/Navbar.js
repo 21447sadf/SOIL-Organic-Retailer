@@ -13,7 +13,7 @@ function Navbar() {
           <li>
             <a href="/">Home</a>
             <a href="/Sales">Specials</a>
-            <a href="/PlanYourDiet ">Plan your diet</a>
+            <a href="/MealPlanning ">Plan your diet</a>
             <a href="/DIYToolkit ">DIY Gardening</a>
           </li>
         </ul>

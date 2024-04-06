@@ -1,8 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import ChangeQtyBtn from "../components/changeQtyBtn";
 import Price from "../components/Price"
 import TotalPrice from "../components/TotalPrice";
+import "./ShoppingCart.css";
 
 const ITEMS_KEY = "items";
 
@@ -10,6 +12,7 @@ function ShoppingCart() {
 
     //Access cartItems from localStorage and display
     const cartItems = JSON.parse(localStorage.getItem('items'));
+
     let total = 0;
     
         //Hook to  remove items from cart
@@ -35,18 +38,11 @@ function ShoppingCart() {
             setFlagForPriceUpdate(prevState => !prevState);
         };
 
-        // //Function to calculate total price
-        // function calcTotalPrice() {
-        //     for (let i = 0; i < cartItems.length; i++) {
-        //         total += cartItems[i].price;
-        //     }
-        //     return total;
-        // }
-
     return (
         <div className="cartWrapper">
-            <h1>Your cart</h1>
-
+            <div className="Your-Cart-Header">
+                <h1>YOUR CART</h1>
+            </div>
             <div className="shoppingCartTable">
                 <table>
                     <tr>
@@ -58,35 +54,56 @@ function ShoppingCart() {
                     {/*Display all cart items as rows here*/}
                     {( cartItems && cartItems.length > 0) ? (cartItems.map((item, index) => (
                         <tr id = {`Item-${item.prodName}`}>
-                            <td>{item.prodName}</td>
+                            <td id="prodName">{item.prodName}</td>
                             <td>${item.price}</td>
-                            <td>
+                            <td id="changeQtyBtn">
                                 <ChangeQtyBtn cartItem = {item} quantity={item.qty} onQtyChange={handleQtyChange} />
                             </td>
-                            <td>
-                                <Price cartItem={item.prodName} itemPrice={item.price} flagUpdate={flagForPriceUpdate} />
+                            <td id="priceData">
+                                <div className="price-and-clear">
+                                        <Price cartItem={item.prodName} itemPrice={item.price} flagUpdate={flagForPriceUpdate} />
+                                        <img 
+                                        src="../clear_black_24dp.svg" 
+                                        alt="remove-item-btn"
+                                        id="remove-item-btn"
+                                        onClick={() => removeItemFromCart(item)}>
+                                        </img>
+                                </div>
                             </td>
-                            <td><button onClick={() => removeItemFromCart(item)}>X</button></td>
                         </tr>
                     ))
                 ) :  (
                     <tr>
-                        <td>No items in the cart</td>
+                        <td>Your cart is empty</td>
                     </tr>)}
                 </table>
             </div>
             <div className="Order-Summary">
                 <table>
-                    <th>Order Summary</th>
-                    <tr>Subtotal<td><TotalPrice flagUpdate={flagForPriceUpdate}/></td></tr>
-                    <tr>TOTAL<td><TotalPrice flagUpdate={flagForPriceUpdate}/></td></tr>
-                </table>
-            </div>
-            <div className="checkout-Btn">
-                <button>Proceed To Checkout</button>
-            </div>
-            <div className="continue-Shopping-Btn">
-                <button>Continue Shopping</button>
+                    <th colSpan={2}>ORDER SUMMARY</th>
+                    <tr id="subtotal-row">
+                        <td>Subtotal</td>
+                        <td class="rightAlign"><TotalPrice flagUpdate={flagForPriceUpdate}/></td>
+                    </tr>
+                    <tr id="total-row">
+                        <td>TOTAL</td>
+                        <td class="rightAlign"><TotalPrice flagUpdate={flagForPriceUpdate}/></td>
+                    </tr>
+                </table>           
+                { cartItems.length > 0 ? 
+                (<Link to="/Checkout">
+                    <div className="checkout-Btn-Wrapper">
+                        <button class="checkout-Btn">PROCEED TO CHECKOUT</button>
+                    </div> 
+                </Link>) : (
+                    null
+                )
+                } 
+                <Link to="/Sales">
+                    <div className="continue-Shopping-Btn-Wrapper">
+                        <button class="continue-Shopping-Btn">Continue Shopping</button>
+                    </div>
+                </Link>
             </div>
         </div>
     );
