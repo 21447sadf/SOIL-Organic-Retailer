@@ -139,3 +139,7 @@ body {
     color: blue; /* Example styling */
     text-decoration: underline;
 }
+.signin-link {
+    text-align: center; /* Center the text horizontally */
+    margin-top: 20px; /* Add some space above the link */
+  }
