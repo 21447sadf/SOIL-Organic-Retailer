@@ -26,6 +26,9 @@ function Sales() {
             cartItems = [...cartItems, item];
             //Store item in local storage
             localStorage.setItem(ITEMS_KEY, JSON.stringify(cartItems));
+            //User notification
+            alert("Item has been added to cart!");
+            
             return cartItems;
         });
       

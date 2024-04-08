@@ -62,7 +62,7 @@ function Slideshow () {
     const slideStyle = {
         position: "relative",
         display: "inline-block",
-        height: "1000px",
+        height: "500px",
         width: "100%",
         borderRadius: "40px"
     };
@@ -71,7 +71,7 @@ function Slideshow () {
     const imageStyle = {
         position: "relative",
         width: "100%",
-        height: "1000px",
+        height: "700px",
         fit: "cover"
     };
 
@@ -79,7 +79,7 @@ function Slideshow () {
     const slideshowDots = {
         textAlign: "center",
         position: "absolute",
-        top: "120%",
+        top: "90%",
         left: "45%"
 
     };
