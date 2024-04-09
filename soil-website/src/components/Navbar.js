@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import profilr_icon from './profile.png';
 function Navbar() {
     const[isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
     // const isAuthenticated = localStorage.getItem('isLoggedIn') === 'true';
     const navigate = useNavigate();
     // const { isAuthenticated, signOut } = useAuth();
@@ -38,6 +39,19 @@ function Navbar() {
       return () => window.removeEventListener('storage', checkAuthStatus);
     }, []);
 
+    //Use state hook to  display number of items in cart
+    const [numItems, setnumItems] = useState(0);
+    
+    useEffect(() => {
+      const items = JSON.parse(localStorage.getItem("items"));
+      if (items !== null) {
+        setnumItems(items.length);
+      }
+      else {
+        setnumItems(0);
+      }
+    }, []);
+
 
   return (
     <div className = "navbarWrapper">
@@ -59,30 +73,28 @@ function Navbar() {
            <img src = {profilr_icon} alt = "Profile" id = "profile-icon" />
           </Link>
           <Link to="/ShoppingCart">
-        <img 
-        src="../shopping_cart_black_24dp.svg" 
-        alt="shopping-cart-btn"
-        id="shopping-cart-btn">
-        </img>
-      </Link>
-
+            <img 
+            src="../shopping_cart_black_24dp.svg" 
+            alt="shopping-cart-btn"
+            id="shopping-cart-btn">
+            </img>
+          </Link>
         </div>
         ) : (
         <div>
-          
       <Link to="/SignIn">
         <button id="SignIn-Btn">Sign In</button>
-       
       </Link>
       <Link to="/SignUp">
         <button id="SignUp-Btn">Sign Up</button>
       </Link>
       <Link to="/ShoppingCart">
-        <img 
-        src="../shopping_cart_black_24dp.svg" 
-        alt="shopping-cart-btn"
-        id="shopping-cart-btn">
-        </img>
+          <img 
+          src="../shopping_cart_black_24dp.svg" 
+          alt="shopping-cart-btn"
+          id="shopping-cart-btn">
+          </img>
+          <div className="numItems">{numItems}</div>
       </Link>
       </div>
         )}
