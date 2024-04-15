@@ -83,7 +83,7 @@ body {
     background: transparent;
     border: none;
    outline: none;
-   color: #ffa9f9;
+   color: #000000;
    font-size: 19px;
   
 }
@@ -143,3 +143,16 @@ body {
     text-align: center; /* Center the text horizontally */
     margin-top: 20px; /* Add some space above the link */
   }
+
+  .profile-info {
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #fff7ad;
+    border-radius: 6px;
+    width: 480px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 19px;
+    color: #000; 
+}

@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { validateName, validateEmail, validatePassword } from './Validation';
-import { useAuth } from './AuthContext'; // Make sure to use the correct path
+import { useAuth } from './AuthContext';
 
 function Profile() {
     const navigate = useNavigate();
@@ -16,7 +16,8 @@ function Profile() {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
-    
+    const { setIsUserLoggedIn } = useAuth();
+    const { logout } = useAuth();
     useEffect(() => {
         const loggedInEmail = localStorage.getItem('loggedInEmail');
        // Fetch all profiles and find the current user's profile
@@ -37,6 +38,8 @@ function Profile() {
     };
 
     const handleSaveChanges = () => {
+
+
         if (!validateName(name) || !validateEmail(email) || (newPassword && !validatePassword(newPassword))) {
             setErrorMsg('Please ensure all fields are valid.');
             return;
@@ -52,7 +55,8 @@ function Profile() {
             return;
         }
 
-        const updatedProfile = { ...profileData, name, email, password: newPassword || profileData.password };
+       const updatedProfile = { ...profileData, name, email, password: newPassword.trim() ? newPassword : profileData.password };
+
         const updatedProfiles = profiles.map(p => p.email === profileData.email ? updatedProfile : p);
         localStorage.setItem('profiles', JSON.stringify(updatedProfiles));
         localStorage.setItem('loggedInEmail', email); // Update the loggedInEmail if email was changed
@@ -73,21 +77,34 @@ function Profile() {
         }
     };
 
+    // const handleSignOut = () => {
+    //     localStorage.removeItem('isLoggedIn');
+    //     localStorage.removeItem('loggedInEmail');
+        
+    //     setIsUserLoggedIn(false); // Update the context to reflect the user has logged out
+
+    //     navigate('/'); // Navigate the user to the home page
+    // };
     const handleSignOut = () => {
-        localStorage.removeItem('isLoggedIn');
-        localStorage.removeItem('loggedInEmail');
-        navigate('/');
+        logout(); // Use the logout function from the context
+
+        navigate('/'); // Navigate the user to the sign-in page
     };
+
 
     if (!profileData) {
         return <p>No profile data found.</p>;
     }
 
     return (
-        <div>
+        <div className='container'>
+            <div className='header'>
             <h1>User Profile</h1>
+           
+            </div>
             {editMode ? (
                 <>
+
                     <input type="text" value={name} onChange={e => setName(e.target.value)} />
                     <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
                     <input type="password" placeholder="New Password" value={newPassword} onChange={e => setNewPassword(e.target.value)} />
@@ -98,9 +115,12 @@ function Profile() {
                 </>
             ) : (
                 <>
-                    <p>Name: {profileData.name}</p>
-                    <p>Email: {profileData.email}</p>
-                    <p>Date of Joining: {format(new Date(profileData.dateOfJoining), 'yyyy-MM-dd')}</p>
+
+<div className='profile-details'>
+  <p>Name: {profileData.name}</p>
+  <p>Email: {profileData.email}</p>
+  <p>Date of Joining: {format(new Date(profileData.dateOfJoining), 'yyyy-MM-dd')}</p>
+</div>
 
                     <button onClick={handleEditToggle}>Edit Profile</button>
                     <button onClick={handleDeleteProfile}>Delete Profile</button>
