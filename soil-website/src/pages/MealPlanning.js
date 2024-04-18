@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function MealPlanning() {
     //API to fetch recipes from
-    const URL = "https://api.spoonacular.com/recipes/complexSearch";
+    const URL = 'https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2&apiKey=bad0ccf2e7d84617ac8b800d2d406844';
 
     //Hooks to manage the retrieval of recipes from the API
     const [meals, setMeals] = useState(null);
@@ -10,16 +10,24 @@ function MealPlanning() {
 
     //Use Effect to call the API
     useEffect(() => {
-        if(getMeals) {
-        //Use promise to call the API asynchronously
-        fetch(URL).then(response => response.json()).then(results => {
-            setMeals(results);
+        fetch(URL)
+        .then((response) => { 
+            if(!response.ok) {
+                throw new Error('Network response was not ok');
+            }        
+            return response.json();
+        })
+        .then((data) => {
+            setMeals(data);
             setGetMeals(false);
+        })
+        .catch((error) => {
+            console.log('There was a problem with the fetch operation:', error);
         });
-        }
     }, [getMeals]);
 
-    //Button function to handle submitting requests 
+
+    // Button function to handle submitting requests 
     const submitRequest = () => {
         setMeals(null);
         setGetMeals(true);
@@ -27,23 +35,22 @@ function MealPlanning() {
 
     return (
         <div className="PersonaliseMealsForm">
+            <label htmlFor="MealInput">Enter your meal type:</label><br />
+            <input type="text" id="MealInput" placeholder="Enter meal here" />
+            <button type="button" onClick={submitRequest}>Find meals</button>
             {/* Conditionally render loading message, or results from API */}
             {
-                meals === null ? 
+                (meals === null) ? 
                 <p>Please wait while we fetch some meals for you...</p>
                 :
-                <div>
-                    {meals.size}
-                    {/* {meals.map(meals => (
-                        <li key = {meals.id}>
-                            {meals.minProteinPercent} | {meals.maxProteinPercent}
-                        </li>
-                    ))} */}
+                <div className="mealsReturned">
+                    {meals.results.map((meal) => {
+                        return (
+                            <p>{meal.title}</p>
+                        );
+                    })}
                 </div>
                 }
-            <label for="MealInput">Enter your meal type:</label>
-            <input id="MealInput "type="Meal" placeholder="Enter meal here" />
-            <button className="Submit-Meals-Request" onClick={submitRequest}>Find meals</button>
         </div>
     );
 };
