@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect} from "react";
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { AuthProvider } from './components/AuthProvider';
+
 import Header from './components/Header';
+import 'bootstrap';
 import Navbar from './components/Navbar';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
@@ -15,13 +17,36 @@ import Checkout from './pages/Checkout';
 import Profile from './components/Profile';
 import PaymentConfirm from './pages/PaymentConfirm';
 import './App.css';
+import { AuthProvider } from './components/AuthContext';
 
-function App() {
+function App() {  
+//   const [authKey, setAuthKey] = useState(Date.now());
+
+// const updateAuthKey = () => {
+//   setAuthKey(Date.now());
+// };
+
+// useEffect(() => {
+//   const handleStorageChange = () => {
+//     updateAuthKey();
+//   };
+
+//   window.addEventListener('storage', handleStorageChange);
+//   return () => {
+//     window.removeEventListener('storage', handleStorageChange);
+//   };
+// }, []);
   return (
+    
+ <AuthProvider>
     <Router>
-      <AuthProvider>
+      
         <div className="App">
           <Header />
+          {/* <Navbar username={username} logoutUser={logoutUser} /> */}
+  {/* <Navbar isUserLoggedIn={isUserLoggedIn} setIsUserLoggedIn={setIsUserLoggedIn} / */}
+  {/* <Navbar key={authKey} /> */}
+  
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -37,8 +62,10 @@ function App() {
           </Routes>
           <Footer />
         </div>
-      </AuthProvider>
+     
     </Router>
+    </AuthProvider>
+    
   );
 }
 

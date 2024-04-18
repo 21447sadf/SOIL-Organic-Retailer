@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import './SignIn.css';
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link} from "react-router-dom";
 import user_icon from './person.png';
 import email_icon from './email.png';
 import password_icon from './password.png';
+import { useAuth } from './AuthContext';
 
 function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-
+    const { setIsUserLoggedIn } = useAuth();
     const handleSubmit = (event) => {
         event.preventDefault();
         const storedProfiles = JSON.parse(localStorage.getItem("profiles")) || [];
@@ -23,6 +24,12 @@ function SignIn() {
         } else {
             alert('The email or password you entered is incorrect.');
         }
+        if (profile) {
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('loggedInEmail', email);
+            setIsUserLoggedIn(true); 
+            
+          }
     };
 return (
     <div className='container'>
@@ -55,7 +62,11 @@ return (
                 <button className="submit" type="submit">
                     Sign In
                 </button>
+
             </div>
+            <div className="signin-link">
+          Don't have an account? <Link to="/SignUp">Sign Up</Link>
+        </div>
         </form>
     </div>
 );

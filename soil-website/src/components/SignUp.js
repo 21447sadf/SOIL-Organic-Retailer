@@ -4,6 +4,7 @@ import user_icon from "./person.png";
 import email_icon from "./email.png";
 import password_icon from "./password.png";
 import { format } from "date-fns";
+import { useAuth } from './AuthContext';
 import { useNavigate, Link } from "react-router-dom";
 import { validateName, validateEmail, validatePassword } from "./Validation";
 
@@ -13,7 +14,7 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const navigate = useNavigate();
-   
+    const { setIsUserLoggedIn } = useAuth();
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -53,6 +54,14 @@ const newProfile = {
     alert("Profile created!");
    
     navigate("/");
+    if (newProfile) {
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('loggedInEmail', email);
+      setIsUserLoggedIn(true); 
+      
+    }
+
+
 };
 
   return (
