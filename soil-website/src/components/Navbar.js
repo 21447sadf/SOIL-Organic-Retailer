@@ -8,7 +8,7 @@ import "./SignIn";
 import "./Navbar.css";
 import {Link} from "react-router-dom";
 import profile_icon from './profile.png';
-function Navbar(i) {
+function Navbar() {
     // const[isUserLoggedIn, setIsUserLoggedIn] = useState(false);
     // // const isAuthenticated = localStorage.getItem('isLoggedIn') === 'true';
    
@@ -44,7 +44,7 @@ function Navbar(i) {
             <ul className="no_style_list">
               <li><a href="/">Home</a></li>
               <li><a href="/Sales">Specials</a></li>
-              <li><a href="/MealPlanning">Plan your diet</a></li>
+              <li><a href="/Meals">Plan your diet</a></li>
               <li><a href="/DIYToolkit">DIY Gardening</a></li>
             </ul>
           </div>
