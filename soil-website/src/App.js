@@ -10,7 +10,7 @@ import SignUp from './components/SignUp';
 import Sales from './pages/Sales';
 import ShoppingCart from './pages/ShoppingCart';
 import DIYToolkit from './pages/DIYToolkit';
-import MealPlanning from './pages/MealPlanning';
+import Meals from './pages/Meals';
 import Footer from './components/Footer';
 import Home from './pages/home';
 import Checkout from './pages/Checkout';
@@ -51,7 +51,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/Sales" element={<Sales />} />
-            <Route path="/MealPlanning" element={<MealPlanning />} />
+            <Route path="/Meals" element={<Meals />} />
             <Route path="/DIYToolkit" element={<DIYToolkit />} />
             <Route path="/SignIn" element={<SignIn />} />
             <Route path="/SignUp" element={<SignUp />} />

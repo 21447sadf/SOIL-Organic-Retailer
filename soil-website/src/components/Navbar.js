@@ -7,8 +7,8 @@ import "./Profile";
 import "./SignIn";
 import "./Navbar.css";
 import {Link} from "react-router-dom";
-import profilr_icon from './profile.png';
-function Navbar(i) {
+import profile_icon from './profile.png';
+function Navbar() {
     // const[isUserLoggedIn, setIsUserLoggedIn] = useState(false);
     // // const isAuthenticated = localStorage.getItem('isLoggedIn') === 'true';
    
@@ -37,60 +37,45 @@ function Navbar(i) {
 
     const { isUserLoggedIn } = useAuth(); // Use the hook to get auth state directly
 
-  return (
-    <div className = "navbarWrapper">
-    <nav className = "navbar">
-      <div className = "listWrapper">
-        <ul className="no_style_list">
-          <li>
-            <a href="/">Home</a>
-            <a href="/Sales">Specials</a>
-            <a href="/MealPlanning ">Plan your diet</a>
-            <a href="/DIYToolkit ">DIY Gardening</a>
-          </li>
-        </ul>
-      </div>
-
-      {isUserLoggedIn? (
-        <div>
-          <Link to="/Profile">
-           <img src = {profilr_icon} alt = "Profile" id = "profile-icon" />
-          </Link>
-          <Link to="/ShoppingCart">
-        <img 
-        src="../shopping_cart_black_24dp.svg" 
-        alt="shopping-cart-btn"
-        id="shopping-cart-btn">
-        </img>
-      </Link>
-
-        </div>
-        ) : (
-        <div>
-          
-      <Link to="/SignIn">
-        <button id="SignIn-Btn">Sign In</button>
-       
-      </Link>
-      <Link to="/SignUp">
-        <button id="SignUp-Btn">Sign Up</button>
-      </Link>
-      <Link to="/ShoppingCart">
-        <img 
-        src="../shopping_cart_black_24dp.svg" 
-        alt="shopping-cart-btn"
-        id="shopping-cart-btn">
-        </img>
-      </Link>
-      </div>
-        )}
-    </nav>
-   </div>
-
- 
-
+    return (
+      <div className="navbarWrapper">
+        <nav className="navbar">
+          <div className="listWrapper">
+            <ul className="no_style_list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/Sales">Specials</a></li>
+              <li><a href="/Meals">Plan your diet</a></li>
+              <li><a href="/DIYToolkit">DIY Gardening</a></li>
+            </ul>
+          </div>
     
-  );
+          <div>
+            {isUserLoggedIn ? (
+              <>
+                <Link to="/Profile">
+                  <img src={profile_icon} alt="Profile" id="profile-icon" />
+                </Link>
+                <Link to="/ShoppingCart">
+                  <img src="../shopping_cart_black_24dp.svg" alt="shopping-cart-btn" id="shopping-cart-btn" />
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/SignIn">
+                  <button id="SignIn-Btn">Sign In</button>
+                </Link>
+                <Link to="/SignUp">
+                  <button id="SignUp-Btn">Sign Up</button>
+                </Link>
+                <Link to="/ShoppingCart">
+                  <img src="../shopping_cart_black_24dp.svg" alt="shopping-cart-btn" id="shopping-cart-btn" />
+                </Link>
+              </>
+            )}
+          </div>
+        </nav>
+      </div>
+    );
 }
 
 export default Navbar;

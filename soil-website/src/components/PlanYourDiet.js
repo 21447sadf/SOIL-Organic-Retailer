@@ -15,7 +15,7 @@ function PlanYourDiet() {
                 <div className="HeaderWrapper">
                     <h1>Plan your nutritious diet!</h1>
                     <p>Select from our assortment of dietician-approved recipes and meal-plans to meet your health goals!</p>
-                    <Link to="/MealPlanning">
+                    <Link to="/Meals">
                         <button className="Plan-Btn">START PLANNING</button>
                     </Link>
                 </div>
