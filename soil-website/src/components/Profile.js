@@ -29,7 +29,8 @@ function Profile() {
         setEmail(userProfile.email);
     } else {
         navigate('/SignIn');
-    }
+    }  
+    //commented out to edit css
 }, [navigate]);
 
     const handleEditToggle = () => {
@@ -99,36 +100,40 @@ function Profile() {
     return (
         <div className='container'>
             <div className='header'>
-            <h1>User Profile</h1>
-           
+                <h1>User Profile</h1>
+                <div className="underline"></div>
             </div>
             {editMode ? (
-                <>
-
-                    <input type="text" value={name} onChange={e => setName(e.target.value)} />
-                    <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
+                <div className='inputs'>
+                    Create new name: 
+                    <input type="text" placeholder = "New name" value={name} onChange={e => setName(e.target.value)} />
+                    Create new email:
+                    <input type="email" placeholder = "New email" value={email} onChange={e => setEmail(e.target.value)} />
+                    Create new password:
                     <input type="password" placeholder="New Password" value={newPassword} onChange={e => setNewPassword(e.target.value)} />
+                    Confirm new password:
                     <input type="password" placeholder="Confirm New Password" value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)} />
-                    <button onClick={handleSaveChanges}>Save Changes</button>
-                    <button onClick={handleEditToggle}>Cancel</button>
+                    <div className="submit-container">
+                        <button className="submit" onClick={handleSaveChanges}>Save Changes</button>
+                        <button className="submit gray" onClick={handleEditToggle}>Cancel</button>
+                    </div>
                     {errorMsg && <p>{errorMsg}</p>}
-                </>
+                </div>
             ) : (
-                <>
-
-<div className='profile-details'>
-  <p>Name: {profileData.name}</p>
-  <p>Email: {profileData.email}</p>
-  <p>Date of Joining: {format(new Date(profileData.dateOfJoining), 'yyyy-MM-dd')}</p>
-</div>
-
-                    <button onClick={handleEditToggle}>Edit Profile</button>
-                    <button onClick={handleDeleteProfile}>Delete Profile</button>
-                    <button onClick={handleSignOut}>Sign Out</button>
-                </>
+                <div className='profile-details'>
+                    <div className='profile-info'><span>Name:</span> {profileData.name}</div>
+                    <div className='profile-info'><span>Email:</span> {profileData.email}</div>
+                    <div className='profile-info'><span>Date of Joining:</span> {format(new Date(profileData.dateOfJoining), 'yyyy-MM-dd')}</div>
+                    <div className="submit-container">
+                        <button className="submit" onClick={handleEditToggle}>Edit Profile</button>
+                        <button className="submit gray" onClick={handleDeleteProfile}>Delete Profile</button>
+                        <button className="submit gray" onClick={handleSignOut}>Sign Out</button>
+                    </div>
+                </div>
             )}
         </div>
     );
+    
 }
 
 export default Profile;

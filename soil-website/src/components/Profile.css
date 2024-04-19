@@ -1,6 +1,13 @@
-.container{
+body {
+    margin: 0; /* Reset default margin */
+    min-height: 100vh; /* Use viewport height to ensure coverage of full screen */
+    background: linear-gradient(90deg, #fff7ad, #ffa9f9);
+    background-attachment: fixed; /* Fix the background so it doesn't move when the content scrolls */
+}
+
+.container {
     display: flex;
-    width: 350px;
+    width: 550px;
     flex-direction: column;
     margin: auto;
     margin-top: 200px;
@@ -8,7 +15,7 @@
     padding-bottom: 30px;
 }
 
-.header{
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,16 +24,71 @@
     margin-top: 30px;
 }
 
-.underline{
+.HeaderSignIn {
+    color: black;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.underline {
     width: 61px;
     height: 6px;
     background: black;
     border-radius: 9px;
 }
 
-.profile-details {
- 
-    text-align: center;    
-  }
+.inputs, .profile-details {
+    margin-top: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
 
-  
+.profile-info {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 480px;
+    height: 80px;
+    background: #fff7ad;
+    border-radius: 6px;
+}
+
+.profile-info input {
+    margin-bottom: 0;
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 19px;
+}
+
+.submit-container {
+    display: flex;
+    gap: 30px;
+    margin: 60px auto;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 59px;
+    color: #fff;
+    background: #ffa9f9;
+    border-radius: 50px;
+    font-size: 19px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+}
+
+.signin-link {
+    text-align: center; /* Center the text horizontally */
+    margin-top: 20px; /* Add some space above the link */
+}
