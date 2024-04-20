@@ -57,13 +57,13 @@
 
 .Order-Purchase-Summary {
     float: right;
-    padding-right: 200px;
+    padding-right: 100px;
     padding-top: 150px;
     padding-left: 50px;
 }
 
 .Order-Purchase-Summary table {
-    width: 450px;
+    width: 550px;
     border-collapse: collapse;
 }
 
