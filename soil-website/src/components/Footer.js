@@ -1,18 +1,13 @@
 import React from "react";
+import "./Footer.css";
 
 function Footer() {
-    const footerStyle = {
-        FontFace: "font-family: TT-Commons-Pro-Expanded, src: url(../../public/Fontspring-DEMO-tt_commons_pro_expanded_regular.otf)",
-        background: "linear-gradient(90deg, #fff7ad, #ffa9f9)",
-        fontFamily: "TT-Commons-Pro-Expanded",
-        width: "100%",
-        height: "50px"
-    };
-
     return (
-    <footer className="Footer">
-        <div className="container" style={footerStyle}>©Soil 2024</div>
-    </footer>
+        <div className="container">
+            <p>©Soil 2024</p>
+            <img src="../X_Icon.png" alt="X_Icon.png" width="35px" height="35px" id="X"/>
+            <img src="../Instagram.jpg" alt="Instagram.jpg" width="35px" height="35px" id="Instagram" />
+        </div>
     );
 }
 
