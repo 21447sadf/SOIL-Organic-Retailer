@@ -27,7 +27,7 @@ function TotalPrice({ flagUpdate }) {
     }, [flagUpdate]);
 
     return (
-        <p>${totalPrice}</p>
+        <p>${totalPrice.toFixed(2)}</p>
     );
 };
 

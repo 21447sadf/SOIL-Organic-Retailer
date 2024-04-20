@@ -1,4 +1,5 @@
 import React from "react";
+import "./PaymentConfirm.css";
 
 function PaymentConfirm() {
 
@@ -6,24 +7,33 @@ function PaymentConfirm() {
     const purchasedItems = JSON.parse(localStorage.getItem("items"));
     let total = 0;
 
+    for (let i = 0; i < purchasedItems.length; i++) {
+        total += purchasedItems[i].price * purchasedItems[i].qty;
+    }
+
     return (
         <div className="Receipt-Wrapper">
             <div className="Thank-you-message">
                 <h1>Thank you for your order!</h1>
                 <div className="Order-Summary-Wrapper">
-                    <h1>Order Summary</h1>
-                    <div className="Order-Summary">
+                    <h2>Order Summary</h2>
+                    <div className="Order-Summary-Table">
+                        <table>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
                         {(purchasedItems.map((item, index) => (
                         <tr id = {`Item-${item.prodName}`}>
                             <td>{item.prodName}</td>
-                            <td>${item.price}</td>
-                            <td>{item.qty} x</td>
-                            <td>${item.price}</td>
-                            <td>{total += (item.qty * item.price)}</td>
+                            <td>${item.price.toFixed(2)}</td>
+                            <td>{item.qty}</td>
+                            <td>${(item.price * item.qty).toFixed(2)}</td>
                         </tr>
                     ))
                     )}
-                    <tr>TOTAL: ${total}</tr>
+                    <td colspan="4" rowspan="1" id="Total-Row">TOTAL: ${total.toFixed(2)}</td>
+                    </table>
                     </div>
                 </div>
             </div>
