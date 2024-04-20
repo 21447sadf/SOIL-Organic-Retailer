@@ -7,7 +7,7 @@ import SignUp from "../components/SignIn";
 import DiscussionForum from "../components/DiscussionForum";
 
 function Home() {
-    // localStorage.setItem("items", JSON.stringify([]));
+    localStorage.setItem("items", JSON.stringify([]));
     return (
         <div className="Home">
             <Slideshow />
