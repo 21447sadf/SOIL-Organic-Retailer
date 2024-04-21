@@ -3,6 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../components/AuthContext';
 import './Meals.css'; 
 
+/**
+ * Renders the Meals component.
+ * This component allows users to search for recipes based on diet, excluded ingredients, and maximum calories.
+ * It fetches recipes from the Spoonacular API and displays them in a grid.
+ * @returns {JSX.Element} The rendered Meals component.
+ */
 function Meals() {
     const [recipes, setRecipes] = useState([]);
     const [searchParams, setSearchParams] = useState({

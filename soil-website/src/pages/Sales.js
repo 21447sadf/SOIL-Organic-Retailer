@@ -3,9 +3,14 @@ import "./Sales.css"
 
 //This component includes a list of sale items
 
-//TO DO: Redirect to Shopping Cart, with item added in
 const ITEMS_KEY = "items";
 
+/**
+ * Renders the Sales component.
+ * This component displays a list of sale items with their descriptions and prices.
+ * Users can add items to their cart by clicking on the "Add to cart" button.
+ * @returns {JSX.Element} The rendered Sales component.
+ */
 function Sales() {
     //Hook to add items to cart
     const [cartItems, setCartItems] = useState([]);

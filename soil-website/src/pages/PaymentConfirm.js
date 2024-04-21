@@ -1,6 +1,11 @@
 import React from "react";
 import "./PaymentConfirm.css";
 
+/**
+ * Renders the payment confirmation page.
+ *
+ * @returns {JSX.Element} The payment confirmation page component.
+ */
 function PaymentConfirm() {
 
     //Get items purchased from local storage

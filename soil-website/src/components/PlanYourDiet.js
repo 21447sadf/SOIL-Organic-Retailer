@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../components/PlanYourDiet.css";
 
+/**
+ * Renders the component for planning a nutritious diet.
+ * @returns {JSX.Element} The rendered component.
+ */
 function PlanYourDiet() {
 
     return (

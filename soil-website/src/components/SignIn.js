@@ -6,6 +6,11 @@ import email_icon from './email.png';
 import password_icon from './password.png';
 import { useAuth } from './AuthContext';
 
+/**
+ * Renders a sign-in form component.
+ *
+ * @returns {JSX.Element} The sign-in form component.
+ */
 function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -20,7 +25,7 @@ function SignIn() {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('loggedInEmail', email);
             alert('You have successfully signed in!');
-            navigate('/Profile'); // Assuming '/Profile' is the route to the user's profile
+            navigate('/Profile'); 
         } else {
             alert('The email or password you entered is incorrect.');
         }

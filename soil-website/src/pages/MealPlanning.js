@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
 
+/**
+ * Represents the MealPlanning component.
+ * This component fetches recipes from an API and displays them based on user input.
+ *
+ * @returns {JSX.Element} The JSX element representing the MealPlanning component.
+ */
 function MealPlanning() {
     //API to fetch recipes from
     const URL = 'https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2&apiKey=bad0ccf2e7d84617ac8b800d2d406844';

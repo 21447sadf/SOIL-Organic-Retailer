@@ -2,6 +2,10 @@ import React from "react";
 import "./Footer.css";
 import { useLocation } from "react-router-dom";
 
+/**
+ * Renders the Footer component.
+ * @returns {JSX.Element} The rendered Footer component.
+ */
 function Footer() {
     const location = useLocation();
 

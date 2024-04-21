@@ -8,6 +8,11 @@ import { useAuth } from './AuthContext';
 import { useNavigate, Link } from "react-router-dom";
 import { validateName, validateEmail, validatePassword } from "./Validation";
 
+/**
+ * Renders a sign-up form component.
+ *
+ * @returns {JSX.Element} The sign-up form component.
+ */
 function SignUp() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -44,7 +49,7 @@ const newProfile = {
     name,
     email,
     password,
-    dateOfJoining // Use the same key that you will access in the Profile component
+    dateOfJoining // Use the same key that we will access in the Profile component
 };
     storedProfiles.push(newProfile);
     localStorage.setItem("profiles", JSON.stringify(storedProfiles));

@@ -2,6 +2,11 @@
     const [cartItems, setCartItems] = useState([]);
 
     //Function to add item to cart
+    /**
+     * Adds an item to the cart and updates the local storage.
+     * @param {Object} item - The item to be added to the cart.
+     * @returns {Array} - The updated cart items.
+     */
     function addItemToCart(item) {
         //Check if item already exists in local storage
         //If it does, don't add anything

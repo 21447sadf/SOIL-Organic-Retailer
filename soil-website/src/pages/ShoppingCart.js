@@ -8,6 +8,10 @@ import "./ShoppingCart.css";
 
 const ITEMS_KEY = "items";
 
+/**
+ * Renders the shopping cart page.
+ * @returns {JSX.Element} The shopping cart component.
+ */
 function ShoppingCart() {
 
     //Access cartItems from localStorage and display

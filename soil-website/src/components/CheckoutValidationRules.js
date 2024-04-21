@@ -1,3 +1,8 @@
+/**
+ * Validates the form values for the checkout process.
+ * @param {Object} values - The form values to be validated.
+ * @returns {Object} - An object containing the validation errors, if any.
+ */
 export default function validate(values) {
     let errors = {};
     //Validate email

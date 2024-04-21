@@ -4,6 +4,11 @@ import useCheckout from "../components/useCheckout";
 import validate from '../components/CheckoutValidationRules';
 import "./Checkout.css";
 
+/**
+ * Renders the Checkout component.
+ * 
+ * @returns {JSX.Element} The rendered Checkout component.
+ */
 function Checkout() {
     const {
         values,

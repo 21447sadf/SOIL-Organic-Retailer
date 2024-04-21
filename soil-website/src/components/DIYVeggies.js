@@ -2,6 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../components/DIYVeggies.css";
 
+/**
+ * Renders the DIYVeggies component.
+ * 
+ * @returns {JSX.Element} The rendered DIYVeggies component.
+ */
 function DIYVeggies() {
         //STYLING
         //Image Container

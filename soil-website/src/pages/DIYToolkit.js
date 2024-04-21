@@ -1,6 +1,12 @@
 import React from "react";
 import "./DIYToolkit.css";
 
+/**
+ * Renders the DIY Toolkit component.
+ * This component displays gardening tips and images for DIY gardening enthusiasts.
+ *
+ * @returns {JSX.Element} The rendered DIY Toolkit component.
+ */
 function DIYToolkit() {
     return (
         <div className="DIYToolkitWrapper">

@@ -1,5 +1,12 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * Custom hook for handling form submission and validation.
+ *
+ * @param {Function} callback - The function to be called when form submission is successful.
+ * @param {Function} validate - The function to validate form values.
+ * @returns {Object} - An object containing handleChange, handleSubmit, values, and errors.
+ */
 const useCheckout = (callback, validate) => {
 
   const [values, setValues] = useState({});

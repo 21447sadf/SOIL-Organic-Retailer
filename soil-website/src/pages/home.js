@@ -6,6 +6,10 @@ import SignIn from "../components/SignUp";
 import SignUp from "../components/SignIn";
 
 
+/**
+ * Renders the Home component.
+ * @returns {JSX.Element} The rendered Home component.
+ */
 function Home() {
     localStorage.setItem("items", JSON.stringify([]));
     return (

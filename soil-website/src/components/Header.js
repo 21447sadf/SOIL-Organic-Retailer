@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
    - Shopping Cart
 */
 
+/**
+ * Renders the header component.
+ * @returns {JSX.Element} The header component.
+ */
 function Header() {
     return (
         <div className="HeaderWrapper">

@@ -6,6 +6,16 @@ import { format } from "date-fns";
 import { validateName, validateEmail, validatePassword } from './Validation';
 import { useAuth } from './AuthContext';
 
+/**
+ * Represents a user profile component.
+ *
+ * @returns {JSX.Element} The rendered user profile component.
+ */
+/**
+ * Represents a user profile component.
+ *
+ * @returns {JSX.Element} The rendered user profile component.
+ */
 function Profile() {
     const navigate = useNavigate();
     const [profiles, setProfiles] = useState([]);
@@ -30,7 +40,7 @@ function Profile() {
     } else {
         navigate('/SignIn');
     }  
-    //commented out to edit css
+   
 }, [navigate]);
 
     const handleEditToggle = () => {
@@ -78,14 +88,6 @@ function Profile() {
         }
     };
 
-    // const handleSignOut = () => {
-    //     localStorage.removeItem('isLoggedIn');
-    //     localStorage.removeItem('loggedInEmail');
-        
-    //     setIsUserLoggedIn(false); // Update the context to reflect the user has logged out
-
-    //     navigate('/'); // Navigate the user to the home page
-    // };
     const handleSignOut = () => {
         logout(); // Use the logout function from the context
 

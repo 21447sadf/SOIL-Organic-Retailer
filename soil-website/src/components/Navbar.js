@@ -8,9 +8,17 @@ import "./SignIn";
 import "./Navbar.css";
 import {Link} from "react-router-dom";
 import profile_icon from './profile.png';
+/**
+ * Renders the navigation bar component.
+ * @returns {JSX.Element} The JSX element representing the navigation bar.
+ */
+/**
+ * Renders the navigation bar component.
+ * @returns {JSX.Element} The JSX element representing the navigation bar.
+ */
 function Navbar() {
    
-  
+
     const { isUserLoggedIn } = useAuth(); // Use the hook to get auth state directly
 
     return (
