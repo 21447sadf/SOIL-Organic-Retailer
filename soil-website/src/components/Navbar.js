@@ -28,7 +28,7 @@ function Navbar() {
               <ul className="no_style_list">
                 <li><a href="/">Home</a></li>
                 <li><a href="/Sales">Specials</a></li>
-                <li><a href="/MealPlanning">Plan your diet</a></li>
+                <li><a href="/Meals">Plan your diet</a></li>
                 <li><a href="/DIYToolkit">DIY Gardening</a></li>
               </ul>
             </div>
