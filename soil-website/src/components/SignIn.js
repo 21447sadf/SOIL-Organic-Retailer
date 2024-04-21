@@ -16,11 +16,13 @@ function SignIn() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const { setIsUserLoggedIn } = useAuth();
+
+    // Function to handle the form submission
     const handleSubmit = (event) => {
         event.preventDefault();
-        const storedProfiles = JSON.parse(localStorage.getItem("profiles")) || [];
+        const storedProfiles = JSON.parse(localStorage.getItem("profiles")) || [];   // Get the stored profiles from local storage
         const profile = storedProfiles.find(p => p.email === email && p.password === password);
-
+        // Check if the profile exists
         if (profile) {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('loggedInEmail', email);

@@ -43,11 +43,14 @@ function Profile() {
    
 }, [navigate]);
 
+    // Function to handle the edit toggle
+
     const handleEditToggle = () => {
         setEditMode(!editMode);
         setErrorMsg('');
     };
-
+     
+    // Function to handle the save changes
     const handleSaveChanges = () => {
 
 
@@ -66,6 +69,7 @@ function Profile() {
             return;
         }
 
+    // Update the profile data
        const updatedProfile = { ...profileData, name, email, password: newPassword.trim() ? newPassword : profileData.password };
 
         const updatedProfiles = profiles.map(p => p.email === profileData.email ? updatedProfile : p);
@@ -77,7 +81,7 @@ function Profile() {
         setErrorMsg('');
         alert('Profile updated successfully.');
     };
-
+    // Function to handle the delete profile
     const handleDeleteProfile = () => {
         if (window.confirm('Are you sure you want to delete your profile? This action cannot be undone.')) {
             const updatedProfiles = profiles.filter(profile => profile.email !== profileData.email);
@@ -90,14 +94,14 @@ function Profile() {
         }
     };
     
-
+   // Function to handle the sign out
     const handleSignOut = () => {
         logout(); // Use the logout function from the context
 
         navigate('/'); // Navigate the user to the sign-in page
     };
 
-
+   // If no profile data is found, display a message
     if (!profileData) {
         return <p>No profile data found.</p>;
     }

@@ -44,11 +44,19 @@ export const AuthProvider = ({ children }) => {
     };
   }, []);
 
+
+  
+  // the return is returning the AuthContext.Provider which is a wrapper for the children components
   return (
-    <AuthContext.Provider value={{ isUserLoggedIn, setIsUserLoggedIn, logout }}>
+    <AuthContext.Provider value={{ isUserLoggedIn, setIsUserLoggedIn, logout }}> 
+    
       {children}
     </AuthContext.Provider>
   );
 };
 
 export const useAuth = () => useContext(AuthContext);
+
+
+
+

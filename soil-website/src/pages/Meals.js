@@ -9,6 +9,9 @@ import './Meals.css';
  * It fetches recipes from the Spoonacular API and displays them in a grid.
  * @returns {JSX.Element} The rendered Meals component.
  */
+
+
+// Function to handle the input changes
 function Meals() {
     const [recipes, setRecipes] = useState([]);
     const [searchParams, setSearchParams] = useState({
@@ -36,11 +39,13 @@ function Meals() {
             return;
         }
 
+
+          // Construct the API URL
         console.log("API Key:", process.env.REACT_APP_SPOONACULAR_API_KEY);
         
         const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&diet=${searchParams.diet}&excludeIngredients=${searchParams.excludeIngredients}&maxCalories=${searchParams.maxCalories}`;
         console.log("API URL:", apiUrl);  // Check the constructed URL in the console
-    
+        // Fetch recipes from the API
         fetch(apiUrl)
             .then(response => response.json())
             .then(data => {
@@ -56,7 +61,7 @@ function Meals() {
                 console.error('Error:', error);
             });
     };
-    
+     // Render the Meals component
     return (
         <div className='meals-container'>
             <div className='search-container'>

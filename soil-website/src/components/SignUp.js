@@ -20,6 +20,8 @@ function SignUp() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const navigate = useNavigate();
     const { setIsUserLoggedIn } = useAuth();
+
+    // Function to handle the form submission
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -35,6 +37,7 @@ function SignUp() {
     const isPasswordStrong = validatePassword(password);
     const doPasswordsMatch = password === confirmPassword;
 
+     // Check if the profile exists
     if (!isNameValid || !isEmailValid || !isPasswordStrong || !doPasswordsMatch) {
         if (!isNameValid) alert("Please enter your name.");
         else if (!isEmailValid) alert("Please enter a valid email address.");
@@ -43,7 +46,7 @@ function SignUp() {
         return;
     }
 
-   
+     // Create a new profile
     const dateOfJoining = format(new Date(), "yyyy-MM-dd");
 const newProfile = {
     name,
@@ -51,13 +54,15 @@ const newProfile = {
     password,
     dateOfJoining // Use the same key that we will access in the Profile component
 };
+
+   // Store the new profile
     storedProfiles.push(newProfile);
     localStorage.setItem("profiles", JSON.stringify(storedProfiles));
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('loggedInEmail', email);
     
     alert("Profile created!");
-   
+     // Navigate to the home page
     navigate("/");
     if (newProfile) {
       localStorage.setItem('isLoggedIn', 'true');
