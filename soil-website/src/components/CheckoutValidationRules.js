@@ -6,6 +6,13 @@ export default function validate(values) {
     } else if (!/\S+@\S+\.\S+/.test(values.email)) {
       errors.email = 'Email address is invalid';
     }
+    //Validate postcode
+    if (!values.postcode) {
+      errors.postcode = "Enter a 4 digit postcode";
+    }
+    else if (!/^[0-9]+$/.test(values.postcode)) {
+      errors.postcode = "Postcode must be 4 digits";
+    }
     //Validate card number
     if (!values.cardNumber) {
       errors.cardNumber = 'Card number is required';
@@ -17,9 +24,10 @@ export default function validate(values) {
         errors.nameoncard = 'Enter your name exactly as it\'s written on your card';
     }
     //Validate expiry
-    if (!values.expiry) {
+    if (!values.expiry || !(/^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/).test(values.expiry)) {
         errors.expiry = 'Enter a valid expiration date';
     }
+
     //Validate CVC
     if (!values.cvc || values.cvc.length !== 3) {
         errors.cvc = 'Enter the CVC or security code on your card';

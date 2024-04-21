@@ -15,7 +15,6 @@ function Checkout() {
     const navigate = useNavigate();
 
     function submitPayment() {
-    alert("No errors, submit callback called!");
     navigate("/Checkout/PaymentConfirm");
     };
 
