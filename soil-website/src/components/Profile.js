@@ -82,11 +82,14 @@ function Profile() {
         if (window.confirm('Are you sure you want to delete your profile? This action cannot be undone.')) {
             const updatedProfiles = profiles.filter(profile => profile.email !== profileData.email);
             localStorage.setItem('profiles', JSON.stringify(updatedProfiles));
-            localStorage.removeItem('isLoggedIn');
-            localStorage.removeItem('loggedInEmail');
-            navigate('/');
+    
+            // Here we call the logout function after successfully deleting the profile
+            logout(); //  update the state in  AuthContext
+    
+            navigate('/'); // Navigate the user to the home page 
         }
     };
+    
 
     const handleSignOut = () => {
         logout(); // Use the logout function from the context
