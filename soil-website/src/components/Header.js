@@ -1,20 +1,26 @@
 import React from "react";
+import "./Header.css";
+import { Link } from "react-router-dom";
 
 /* Header Component includes:
    - Logo
    - Shopping Cart
 */
 
+/**
+ * Renders the header component.
+ * @returns {JSX.Element} The header component.
+ */
 function Header() {
     return (
-        <header className="Header">
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-            <div className="Header-Logo">Soil</div>
-            <button class="btn">
-                <i class="shopping-cart-btn"><span class="material-icons">shopping_cart</span></i>
-            </button>
-        </header>
+        <div className="HeaderWrapper">
+            <header className="Header">
+                <div className="Header-Logo">SOIL</div>
+            </header>
+        </div>
+
     );
 }
+
 
 export default Header;

@@ -1,39 +1,28 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../components/PlanYourDiet.css";
 
+/**
+ * Renders the component for planning a nutritious diet.
+ * @returns {JSX.Element} The rendered component.
+ */
 function PlanYourDiet() {
-
-    //STYLING
-    //Text
-    const textStyle = {
-        position: "absolute",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        top: "0px",
-        left: "0px",
-        height: "1000px",
-        width: "700px",
-        backgroundColor: "#FFF9C7"
-    };
-
-    //Image 
-    const imageStyle = {
-        position: "relative",
-        width: "100%",
-        height: "1000px",
-        fit: "cover"
-    };
 
     return (
         //Image wrapper
-        <div className="PlanYourDietWrapper" style={imageStyle}>
-            <img src="MealPlanning.jpg" alt="MealPlanning.jpg" height="1000px" width="100%"></img>
+        <div className="PlanYourDietWrapper">
+            <div className="MealPlan-Image">
+                <img src="PlanYourDietImg.jpg" alt="PlanYourDietImg.jpg" height="1000px" width="100%"></img>
+            </div>
             {/* Text Wrapper */}
-            <div className="text" style={textStyle}>
-                <h1>Plan your nutritious diet!</h1>
-                <p>Select from our assortment of dietician-approved recipes and meal-plans to meet your health goals!</p>
-                <button>Start Planning!</button>
+            <div className="textWrapper">
+                <div className="HeaderWrapper">
+                    <h1>Plan your nutritious diet!</h1>
+                    <p>Select from our assortment of dietician-approved recipes and meal-plans to meet your health goals!</p>
+                    <Link to="/Meals">
+                        <button className="Plan-Btn">START PLANNING</button>
+                    </Link>
+                </div>
             </div>
         </div>
     );
