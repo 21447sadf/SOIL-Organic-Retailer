@@ -5,154 +5,129 @@ body {
     background-attachment: fixed; /* Fix the background so it doesn't move when the content scrolls */
 }
 
-.container{
+.container {
     display: flex;
-    width: 550px;
     flex-direction: column;
-    margin: auto;
-    margin-top: 200px;
+    align-items: center; /* Center align the flex items */
+    width: 90%; /* Responsive width */
+    max-width: 550px; /* Maximum width */
+    margin: 200px auto 0; /* Center horizontally */
     background: #fff;
-    padding-bottom: 30px;
+    padding: 0 20px 30px; /* Padding for left, right, and bottom */
 }
 
-.header{
+.header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 9px;
-    width: 100%;
+    width: 100%; /* Full width of its container */
     margin-top: 30px;
 }
 
-.text{
+.text, .HeaderSignUp, .HeaderSignIn {
     color: black;
-    font-size: 48px;
+    font-size: calc(24px + (48 - 24) * ((100vw - 300px) / (1600 - 300))); /* Responsive font size */
     font-weight: 700;
     text-align: center;
 }
 
-.HeaderSignUp{
-    
-        color: black;
-        font-size: 48px;
-        font-weight: 700;
-        text-align: center;
-    }
-    
-    .HeaderSignIn{
-    
-        color: black;
-        font-size: 48px;
-        font-weight: 700;
-        text-align: center;
-    }  
-
-.underline{
+.underline {
     width: 61px;
     height: 6px;
     background: black;
     border-radius: 9px;
 }
 
-.inputs{
+.inputs {
     margin-top: 55px;
     display: flex;
     flex-direction: column;
     gap: 25px;
+    width: 100%; /* Use full width for responsiveness */
 }
 
-.input{
-    margin-bottom: 15px;
+.input {
     display: flex;
     align-items: center;
-    margin: auto;
-    width: 480px;
+    width: 100%; /* Full width to fit container */
     height: 80px;
     background: #fff7ad;
     border-radius: 6px;
-
-}
-.input img{
-    margin: 0px 30px;
 }
 
-.input input{
-    margin-bottom: 0;
-        height: 50px;
-    width: 400px;
+.input img {
+    margin: 0 30px;
+}
+
+.input input {
+    height: 50px;
+    width: 100%; /* Full width to fill parent */
     background: transparent;
     border: none;
-   outline: none;
-   color: #000000;
-   font-size: 19px;
-  
+    outline: none;
+    color: #000000;
+    font-size: 19px;
 }
 
-
-.forgot-password {
-    display: flex; /* This makes .forgot-password a flex container */
-    justify-content: center; /* This will center the content horizontally */
-    align-items: center; /* This will center the content vertically if needed */
-    margin-top: 27px; /* Keeps the original top margin */
-    color: #797979;
-    font-size: 18px;
-}
-
-.forgot-password span {
-    color: black;
-    cursor: pointer;
-}
-.submit-container{
+.submit-container {
     display: flex;
+    flex-direction: column;
     gap: 30px;
-    margin: 60px auto;
+    width: 100%;
+    margin-top: 60px;
 }
 
-.submit{
+.submit, .gray {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
+    width: 100%; /* Full width for responsive buttons */
     height: 59px;
     color: #fff;
     background: #ffa9f9;
-    border-radius: 50px;
-    font-size: 19px;
-    font-weight: 700;
-    cursor: pointer;
     text-align: center;
 }
 
-.gray{
+.gray {
     background: #EAEAEA;
-    color: #676767
+    color: #676767;
 }
 
-
-.forgot-password, .already-account {
+.signin-link {
     text-align: center;
     margin-top: 20px;
-    cursor: pointer;
 }
 
-.forgot-password span, .already-account span {
-    color: blue; /* Example styling */
-    text-decoration: underline;
-}
-.signin-link {
-    text-align: center; /* Center the text horizontally */
-    margin-top: 20px; /* Add some space above the link */
-  }
-
-  .profile-info {
+.profile-info {
     margin: 10px auto;
     padding: 10px 20px;
     background: #fff7ad;
     border-radius: 6px;
-    width: 480px; 
+    width: 100%; /* Full width for responsiveness */
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     font-size: 19px;
-    color: #000; 
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .input img {
+        margin: 0 15px;
+    }
+
+    .submit, .gray {
+        font-size: 16px;
+    }
 }
