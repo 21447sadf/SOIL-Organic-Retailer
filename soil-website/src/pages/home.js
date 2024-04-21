@@ -6,17 +6,16 @@ import SignIn from "../components/SignUp";
 import SignUp from "../components/SignIn";
 import DiscussionForum from "../components/DiscussionForum";
 
+//Display of landing page components
 function Home() {
+    //Local storage is initialised with
+    //Empty set of items
     localStorage.setItem("items", JSON.stringify([]));
     return (
         <div className="Home">
             <Slideshow />
             <PlanYourDiet />
-            {/* <DiscussionForum /> */}
             <DIYVeggies />
-
-            {/* <SignIn /> */}
-            {/* <SignUp /> */}
         </div>
     );
 }

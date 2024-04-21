@@ -6,11 +6,14 @@ const ITEMS_KEY = "items"
 const ChangeQtyBtn = ({ cartItem, quantity, onQtyChange }) => {
     const [count, setCount] = useState(quantity);
 
+    //Re-renders the quantity value displayed in table
     useEffect(() => {
       setCount(quantity);
       updateLocalStorage(quantity);
     }, [quantity]);
-  
+
+    //Handles click of '+' button
+    //Updates local storage with new qty and triggers a re-render
     const handleIncrementCounter = () => {
       if (count < 10) {
         setCount((prevState) => prevState + 1);
@@ -18,7 +21,9 @@ const ChangeQtyBtn = ({ cartItem, quantity, onQtyChange }) => {
         onQtyChange();
       }
     };
-  
+
+    //Handles click of '-' button
+    //Updates local storage with new qty and triggers a re-render
     const handleDecrementCounter = () => {
       if (count > 1) {
         setCount((prevState) => prevState - 1);

@@ -5,6 +5,7 @@ import validate from '../components/CheckoutValidationRules';
 import "./Checkout.css";
 
 function Checkout() {
+    //Store values, errors and updates to the form
     const {
         values,
         errors,
@@ -12,12 +13,15 @@ function Checkout() {
         handleSubmit,
       } = useCheckout(submitPayment, validate);
 
+    //Hook to navigate to Payment Confirmation page
     const navigate = useNavigate();
 
+    //Upon successful submission, redirects to Payment Confirmation page
     function submitPayment() {
     navigate("/Checkout/PaymentConfirm");
     };
 
+    //Calculate total price for order summary
     const items = JSON.parse(localStorage.getItem("items"));
     let total = 0;
 
@@ -32,6 +36,7 @@ function Checkout() {
                     <div className="checkoutContainer">           
                         <h1>Checkout</h1>
                         <h2>Shipping Details</h2>
+                        {/* Fields that require validation have className '...is-danger' */}
                         <input className={`input ${errors.email && 'is-danger'}`} 
                             type="email" name="email" placeholder="Email" onChange={handleChange} 
                             value={values.email || ''} required /><br />
@@ -76,6 +81,7 @@ function Checkout() {
                     
                 </form>    
             </div>
+            {/* Order Summary Table */}
             <div className="Order-Purchase-Summary">
                 <table>
                     <th colSpan={2}>ORDER SUMMARY</th>

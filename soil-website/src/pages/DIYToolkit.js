@@ -1,6 +1,8 @@
 import React from "react";
 import "./DIYToolkit.css";
 
+//Static page that displays useful tips
+//For DIY Gardening
 function DIYToolkit() {
     return (
         <div className="DIYToolkitWrapper">

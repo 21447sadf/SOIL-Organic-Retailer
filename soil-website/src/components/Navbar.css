@@ -1,7 +1,7 @@
 .navbar {
     background: none;
     width: 100%;
-    display: flex;
+    display: flex; /* Creates dynamic display for different screen sizes */
     justify-content: space-between;
     align-items: center;
 }

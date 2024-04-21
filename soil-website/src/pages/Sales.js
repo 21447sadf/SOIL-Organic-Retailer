@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./Sales.css"
 
 //This component includes a list of sale items
-
-//TO DO: Redirect to Shopping Cart, with item added in
 const ITEMS_KEY = "items";
 
 function Sales() {
