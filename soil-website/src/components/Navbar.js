@@ -9,32 +9,8 @@ import "./Navbar.css";
 import {Link} from "react-router-dom";
 import profile_icon from './profile.png';
 function Navbar() {
-    // const[isUserLoggedIn, setIsUserLoggedIn] = useState(false);
-    // // const isAuthenticated = localStorage.getItem('isLoggedIn') === 'true';
    
-    // useEffect(() => {
-    //   const profile = localStorage.getItem('profile');
-    //   setIsUserLoggedIn(profile!== null);
-    // }, []);
-
-    // useEffect(() => {
-      
-    //   const checkAuthStatus = () => {
-    //     const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    //     setIsUserLoggedIn(loggedIn);
-    //   };
-
-    
-     
-    //   window.addEventListener('storage', checkAuthStatus);
-    
-    
-    //   checkAuthStatus();
-    
-    //   const { isUserLoggedIn } = useAuth(); // Use the hook to get auth state
-    //   return () => window.removeEventListener('storage', checkAuthStatus);
-    // }, []);
-
+  
     const { isUserLoggedIn } = useAuth(); // Use the hook to get auth state directly
 
     return (
