@@ -12,6 +12,7 @@ const ITEMS_KEY = "items";
  * Renders the shopping cart page.
  * @returns {JSX.Element} The shopping cart component.
  */
+//This page displays items user has added to their cart
 function ShoppingCart() {
 
     //Access cartItems from localStorage and display
@@ -77,11 +78,13 @@ function ShoppingCart() {
                         </tr>
                     ))
                 ) :  (
+                    // Empty cart message
                     <tr>
                         <td>Your cart is empty</td>
                     </tr>)}
                 </table>
             </div>
+            {/* Order Summary table */}
             <div className="Order-Summary">
                 <table>
                     <th colSpan={2}>ORDER SUMMARY</th>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./Sales.css"
 
 //This component includes a list of sale items
-
 const ITEMS_KEY = "items";
 
 /**

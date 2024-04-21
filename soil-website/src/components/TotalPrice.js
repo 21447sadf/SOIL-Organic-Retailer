@@ -18,11 +18,6 @@ function TotalPrice({ flagUpdate }) {
 
     useEffect(() => { 
         const total = calcTotalPrice();
-        // const items = JSON.parse(localStorage.getItem("items"));
-        // let total = 0; 
-        // for (let i = 0; i < items.length; i++) {
-        //     total += items[i].qty * items[i].price;
-        // }
         setTotalPrice(total);
     }, [flagUpdate]);
 

@@ -7,6 +7,8 @@ import "./DIYToolkit.css";
  *
  * @returns {JSX.Element} The rendered DIY Toolkit component.
  */
+//Static page that displays useful tips
+//For DIY Gardening
 function DIYToolkit() {
     return (
         <div className="DIYToolkitWrapper">

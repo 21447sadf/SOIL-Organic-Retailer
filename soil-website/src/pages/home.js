@@ -10,17 +10,16 @@ import SignUp from "../components/SignIn";
  * Renders the Home component.
  * @returns {JSX.Element} The rendered Home component.
  */
+//Display of landing page components
 function Home() {
+    //Local storage is initialised with
+    //Empty set of items
     localStorage.setItem("items", JSON.stringify([]));
     return (
         <div className="Home">
             <Slideshow />
             <PlanYourDiet />
-            {/* <DiscussionForum /> */}
             <DIYVeggies />
-
-            {/* <SignIn /> */}
-            {/* <SignUp /> */}
         </div>
     );
 }
