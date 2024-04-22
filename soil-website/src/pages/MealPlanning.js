@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
  */
 function MealPlanning() {
     //API to fetch recipes from
-    const URL = 'https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2&apiKey=bad0ccf2e7d84617ac8b800d2d406844';
+    const URL = 'https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2&apiKey=';
 
     //Hooks to manage the retrieval of recipes from the API
     const [meals, setMeals] = useState(null);
